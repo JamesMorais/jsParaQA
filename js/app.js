@@ -1,78 +1,57 @@
-console.log('Olá, JavaScript!')
 
-/*var nome = 'Mestre Yoda'
-var idade = 100
-var jedi = true
+const LIST = [
+    {
+       id: 1,
+       nome: 'Yoda',
+       avatar: 'images/yoda.png'
+    },
+    {
+        id: 2,
+        nome: 'Luke Skywalker',
+        avatar: 'images/luke.png'
+     },
+     {
+        id: 3,
+        nome: 'Princesa Leia',
+        avatar: 'images/leia.png'
+     },
+     {
+        id: 4,
+        nome: 'Hansolo',
+        avatar: 'images/hansolo.png'
+     },
+     {
+        id: 5,
+        nome: 'Darth Vader',
+        avatar: 'images/vader.png'
+     },
+     {
+        id: 6,
+        nome: 'Chewbaca',
+        avatar: 'images/chewbacca.png'
+     },
+     {
+        id: 7,
+        nome: 'R2d2',
+        avatar: 'images/r2d2.png'
+     },
+     {
+        id: 8,
+        nome: 'C3pO',
+        avatar: 'images/c3po.png'
+     },
+]
 
-console.log(typeof nome)
-console.log(typeof idade)
-console.log(typeof jedi)*/
-
-var userName = "James"
-document.getElementById('user-name').innerHTML = userName
-
-// Operadores de comparação //
-
-/*var v1 = 5
-var v2 = '5'
-
-var resultado = v1 !== v2
-console.log(resultado)*/
-
-/*function soma(n1, n2){
-     console.log(n1+n2)
-}
-soma(1, 2)*/
-
-// function boasVindas(nome){
-//     alert(nome+ ', seja bem vindo')
-// }
-// boasVindas('Fulano')
-
-// function soma(n1, n2){
-//     return n1+n2
-// }
-// var resultado = soma(2, 2)
-// console.log(resultado)
-
-//Controle de fluxos/
-
-// Sendo um cliente correntista do banco
-//posso sacar dinheiro em caixas eletrônicos
-// para poder comprar em lugares que não aceitem o cartão de débito ou crédito
-
-var saldo = 1000
-function saque(valor){
-    if(valor > saldo){
-        console.log('Valor do saque superior ao saldo')
+const App = new Vue({
+    el: '#app',
+    data: {
+        title: 'Star Wars Lego',
+        userName: 'James',
+        characters: LIST
+    },
+    methods:{
+        like(name){
+            alert(`O personagem ${name} recebeu um like`)
+        }
     }
-    else if(valor>700){
-        console.log(' o valor é superior ao máximo permitido')
-    }
-    else{
-        saldo = saldo - valor
-    }
-}
-saque(701)
-
-console.log(saldo)
-
-
-//cenário 1: Saque com sucesso
-// Dado que meu saldo é de 1000 reais
-// quando faço um saque de 500 reais
-// então o valor do saque deve ser deduzido do meu saldo
-
-//Cenário 2: Saque com valor superior ao saldo
-// Dado que meu saldo é de 1000 reais
-// Quando faço um saque de 1001 reais
-// então não deve deduzir do meu saldo
-// E deve mostrar uma mensagem de alerta informando que o valor é superior ao saldo
-
-// Cenário 3: Saque com valor máximo
-// Dado que meu saldo é de 1000 reais
-// E o valor máximo por operação é de 700
-// Quando faço um saque no valor de 701 reais
-// Então não deve deduzir do meu saldo
-// E deve mostrar uma mensagem de alerta informando que o valor é superior ao máximo permitido
-
+})
